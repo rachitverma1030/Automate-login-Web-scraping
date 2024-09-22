@@ -9,18 +9,18 @@ PATH = './chromedriver'
 driver = webdriver.Chrome()
 
 driver.get('https://twitter.com/login')
-subject = "Vipin Bhaskar"
+subject = "Type name of user"                
 
 sleep(5)
 
 username = driver.find_element(By.NAME,'text')
-username.send_keys('codingsvipin')
+username.send_keys('Type username')           # replace username with your original Twitter's username
 next_button = driver.find_element(By.XPATH,"//span[contains(text(),'Next')]")
 next_button.click()
 
 sleep(5)
 password = driver.find_element(By.XPATH,"//input[@name='password']")
-password.send_keys("@TwitteR8318*&#")
+password.send_keys("Type Password")          # Password of Twitter
 
 sleep(5)
 
@@ -28,9 +28,9 @@ login = driver.find_element(By.XPATH,"//span[contains(text(),'Log in')]").click(
 
 sleep(5)
 
-driver.get("https://twitter.com/codingsvipin")
+driver.get("https://twitter.com/username")   # replace username with your original Twitter's username
 
-query = "cricket"
+query = "List Query"                         # list your own Query
 tweets = []
 limit = 10
 for tweet in sntwitter.TwitterSearchScraper(query).get_items():
